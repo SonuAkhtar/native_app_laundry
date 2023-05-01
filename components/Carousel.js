@@ -4,8 +4,8 @@ import { SliderBox } from "react-native-image-slider-box";
 
 const Carousel = () => {
   const images = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9-BxrefNQGvh1WDDCDLyjA9NRlCvrfoWYNeUc7wHc&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwB5Jiv-83Buqay0BUtRDCRScQM5a3VtpHmCjYS3ME&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPUVD4CFWarML5doBlbWueho7Pd3lr-kbFmmPpcbhaidELFcAyD6JJ6qpm8HUZyZstpcQ&usqp=CAU",
+    "https://st.depositphotos.com/3877249/56765/v/450/depositphotos_567650102-stock-illustration-laundry-room-with-washing-machine.jpg",
   ];
   return (
     <View>

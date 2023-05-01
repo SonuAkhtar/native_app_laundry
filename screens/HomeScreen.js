@@ -18,8 +18,11 @@ import DressItem from "../components/DressItem";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../ProductReducer";
 import { useNavigation } from "@react-navigation/native";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
 
 const HomeScreen = () => {
+  const [items, setItems] = useState([]);
   const cart = useSelector((state) => state.cart.cart);
   const total = cart
     .map((item) => item.quantity * item.price)
@@ -104,56 +107,18 @@ const HomeScreen = () => {
   useEffect(() => {
     if (product.length > 0) return;
 
-    const fetchProducts = () => {
-      services.map((service) => dispatch(getProducts(service)));
+    const fetchProducts = async () => {
+      const colRef = collection(db, "types");
+      const docsSnap = await getDocs(colRef);
+
+      docsSnap.forEach((doc) => {
+        items.push(doc.data());
+      });
+
+      items?.map((service) => dispatch(getProducts(service)));
     };
     fetchProducts();
   }, []);
-
-  const services = [
-    {
-      id: "0",
-      image: "https://cdn-icons-png.flaticon.com/128/4643/4643574.png",
-      name: "Shirt",
-      quantity: "0",
-      price: 10,
-    },
-    {
-      id: "1",
-      image: "https://cdn-icons-png.flaticon.com/128/4643/4643574.png",
-      name: "Shirt",
-      quantity: "0",
-      price: 10,
-    },
-    {
-      id: "2",
-      image: "https://cdn-icons-png.flaticon.com/128/4643/4643574.png",
-      name: "Shirt",
-      quantity: "0",
-      price: 10,
-    },
-    {
-      id: "3",
-      image: "https://cdn-icons-png.flaticon.com/128/4643/4643574.png",
-      name: "Shirt",
-      quantity: "0",
-      price: 10,
-    },
-    {
-      id: "4",
-      image: "https://cdn-icons-png.flaticon.com/128/4643/4643574.png",
-      name: "Shirt",
-      quantity: "0",
-      price: 10,
-    },
-    {
-      id: "5",
-      image: "https://cdn-icons-png.flaticon.com/128/4643/4643574.png",
-      name: "Shirt",
-      quantity: "0",
-      price: 10,
-    },
-  ];
 
   return (
     <>
@@ -170,15 +135,19 @@ const HomeScreen = () => {
             <Text>Current location</Text>
           </View>
 
-          <Pressable style={{ marginLeft: "auto", marginRight: 7 }}>
+          <Pressable
+            onPress={() => navigation.navigate("profile")}
+            style={{ marginLeft: "auto", marginRight: 7 }}
+          >
             <Image
               style={{
-                width: 40,
-                height: 40,
-                borderRadius: 20,
-                backgroundColor: "red",
+                width: 50,
+                height: 50,
+                borderRadius: 25,
               }}
-              source={{ uri: "" }}
+              source={{
+                uri: "https://pyxis.nymag.com/v1/imgs/261/5f0/9adbe26311064c2ffd89c82deae5167d2a-robert-downey-jr.rsquare.w330.jpg",
+              }}
             />
           </Pressable>
         </View>
