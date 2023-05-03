@@ -157,7 +157,6 @@ const HomeScreen = () => {
         <View
           style={{
             margin: 10,
-            padding: 10,
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-between",
@@ -166,7 +165,14 @@ const HomeScreen = () => {
             borderRadius: 7,
           }}
         >
-          <TextInput placeholder="Search for items" />
+          <TextInput
+            placeholder="Search for items"
+            style={{
+              padding: 10,
+              height: "100%",
+              width: "100%",
+            }}
+          />
           <Feather name="search" size={24} color="#fd5c63" />
         </View>
 
@@ -187,7 +193,7 @@ const HomeScreen = () => {
             backgroundColor: "#088f8f",
             padding: 10,
             marginBottom: 30,
-            margin: 15,
+            marginTop: "auto",
             borderRadius: 7,
             flexDirection: "row",
             alignItems: "center",

@@ -13,27 +13,27 @@ const Services = () => {
   const services = [
     {
       id: "0",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgve4DCmsabz_NbIOJRLSnjtTB9JsAbaWQk7dVaEZENzl6yrrWuogEgedaezrxO_u9w10&usqp=CAU",
-      name: "Washing",
-    },
-
-    {
-      id: "1",
-      image:
-        "https://st.depositphotos.com/3877249/56765/v/450/depositphotos_567650102-stock-illustratiohttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPXxzOVNuDQmWaTOGq725okQedPVYyqJaE8Q&usqp=CAUn-laundry-room-with-washing-machine.jpg",
-      name: "Ironing",
-    },
-    {
-      id: "2",
       image: "https://cdn-icons-png.flaticon.com/128/3003/3003984.png",
       name: "Laundry",
     },
     {
+      id: "1",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBvFLBpbOQY7eRr4ojxjPY4U-qwx2cOqJrzA&usqp=CAU",
+      name: "Ironing",
+    },
+
+    {
+      id: "2",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD47hYYb7QpiZSqx496HH70Be0KmKMrwWWRQ&usqp=CAU",
+      name: "Dry Clean",
+    },
+    {
       id: "3",
       image:
-        "https://www.shutterstock.com/image-vector/vector-isometric-dry-cleaning-illustration-260nw-1901181745.jpg",
-      name: "Dry Clean",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRimuAOleA6UEXsV9pZh0maAKtQZuS4nh5z4A&usqp=CAU",
+      name: "Pick & Drop",
     },
   ];
   return (

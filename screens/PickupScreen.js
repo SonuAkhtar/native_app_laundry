@@ -12,6 +12,7 @@ import {
 import HorizontalDatepicker from "@awrminkhodaei/react-native-horizontal-datepicker";
 import { useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
+import { Ionicons } from "@expo/vector-icons";
 
 const PickupScreen = () => {
   const cart = useSelector((state) => state.cart.cart);
@@ -104,27 +105,45 @@ const PickupScreen = () => {
   };
   return (
     <>
-      <SafeAreaView>
-        <Text style={{ fontSize: 16, fontWeight: "500", marginHorizontal: 10 }}>
-          Enter address
-        </Text>
+      <SafeAreaView
+        style={{
+          marginTop: 50,
+        }}
+      >
+        <View
+          style={{
+            padding: 10,
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
+          <Ionicons
+            onPress={() => navigation.goBack()}
+            name="arrow-back"
+            size={24}
+            color="black"
+          />
+          <Text>Home</Text>
+        </View>
         <TextInput
           style={{
-            padding: 40,
+            height: 100,
+            width: "95%",
+            padding: 10,
             borderColor: "gray",
             borderWidth: 0.7,
-            paddingVertical: 80,
             borderRadius: 9,
             margin: 10,
           }}
+          placeholder="Please Enter your address"
         />
         <Text style={{ fontSize: 16, fontWeight: "500", marginHorizontal: 10 }}>
           Pickup Date
         </Text>
         <HorizontalDatepicker
           mode="gregorian"
-          startDate={new Date("2023-04-13")}
-          endDate={new Date("2023-04-21")}
+          startDate={new Date("2023-05-01")}
+          endDate={new Date("2023-05-31")}
           initialSelectedDate={new Date("2020-08-22")}
           onSelectedDateChange={(date) => setSelectedDate(date)}
           selectedItemWidth={170}
@@ -207,7 +226,6 @@ const PickupScreen = () => {
             padding: 10,
             marginBottom: 30,
             marginTop: "auto",
-            margin: 15,
             borderRadius: 7,
             flexDirection: "row",
             alignItems: "center",

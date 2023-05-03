@@ -341,7 +341,6 @@ const CartScreen = () => {
             padding: 10,
             marginBottom: 30,
             marginTop: "auto",
-            margin: 15,
             borderRadius: 7,
             flexDirection: "row",
             alignItems: "center",
